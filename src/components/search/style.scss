@@ -1,0 +1,26 @@
+.search-wrapp {
+    --size: 100px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    .input-search {
+        position: relative;
+        width: 100%;
+        padding: 12px 19px;
+        padding-right: var(--size);
+        // color: var(--while-color);
+        border-radius: 8px;
+        opacity: 0.6;
+    }
+    .btn-search {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 100%;
+        width: var(--size);
+        transform: translateY(-50%);
+        color: var(--while-color);
+        z-index: 1;
+    }
+}

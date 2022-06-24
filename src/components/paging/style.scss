@@ -1,0 +1,26 @@
+.paging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+
+    .btn-next,
+    .btn-previous,
+    .btn {
+        --size: 30px;
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--black-coler);
+        border-radius: 100rem;
+        color: var(--black-coler);
+    }
+    .active {
+        color: var(--while-color);
+        border: none;
+        background-color: var(--orange-coler);
+    }
+}

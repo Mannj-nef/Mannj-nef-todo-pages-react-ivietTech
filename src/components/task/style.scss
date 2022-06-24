@@ -1,0 +1,29 @@
+.task-item {
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .title,
+    .desc-main {
+        font-weight: 500;
+    }
+    .done {
+        color: var(--blue-color);
+    }
+    .doing {
+        color: var(--orange-coler);
+    }
+    .new {
+        color: var(--green-color);
+    }
+    .desc {
+        line-height: 1.8;
+        border-top: 1px solid #e0e5e2;
+        padding-top: 3px;
+        margin-top: 3px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

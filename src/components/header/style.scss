@@ -1,0 +1,14 @@
+.header {
+    padding: 14px 20px;
+    background-color: var(--orange-coler);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn {
+        background-color: var(--while-color);
+        color: var(--text-color);
+        border-radius: 8px;
+        font-size: 24px;
+        padding: 8px 35px;
+    }
+}
