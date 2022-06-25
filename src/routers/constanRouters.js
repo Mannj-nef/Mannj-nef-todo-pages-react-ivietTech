@@ -17,11 +17,16 @@ export const ROUTER = {
   DOING_TASK: {
     path: "/doing-task",
     exact: true,
-    name: "DOING Task",
+    name: "Doing Task",
   },
   DONE_TASK: {
     path: "/done-task",
     exact: true,
     name: "Done Task",
+  },
+  CREACT_TASK: {
+    path: "/creact-task",
+    exact: true,
+    name: "Creact task",
   },
 };

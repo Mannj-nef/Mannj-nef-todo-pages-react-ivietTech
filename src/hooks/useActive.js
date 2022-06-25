@@ -3,7 +3,6 @@ import { useEffect } from "react";
 const useActive = (dom) => {
   useEffect(() => {
     const listNode = document.querySelectorAll(dom);
-
     const handleClick = (e) => {
       const target = e.target;
       [...listNode].forEach((item) => {
@@ -11,6 +10,7 @@ const useActive = (dom) => {
       });
       target.classList.add("active");
     };
+
     [...listNode].forEach((item) => {
       item.addEventListener("click", handleClick);
     });
@@ -20,6 +20,7 @@ const useActive = (dom) => {
       });
     };
   }, [dom]);
+
   return;
 };
 

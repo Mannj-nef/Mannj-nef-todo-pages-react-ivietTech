@@ -24,19 +24,25 @@ const index = () => {
           component={AllTask}
         />
         <Route
-          path={ROUTER.ALL_TASK.path}
-          exact={ROUTER.ALL_TASK.exact}
+          path={ROUTER.NEW_TASK.path}
+          exact={ROUTER.NEW_TASK.exact}
           component={NewTask}
         />
-        <Route path="/doingTask">
-          <DoingTask></DoingTask>
-        </Route>
-        <Route path="/doneTask">
-          <DoneTask></DoneTask>
-        </Route>
-        <Route path="/creact-task">
-          <CreactTask></CreactTask>
-        </Route>
+        <Route
+          path={ROUTER.DOING_TASK.path}
+          exact={ROUTER.DOING_TASK.exact}
+          component={DoingTask}
+        />
+        <Route
+          path={ROUTER.DONE_TASK.path}
+          exact={ROUTER.DONE_TASK.exact}
+          component={DoneTask}
+        />
+        <Route
+          path={ROUTER.CREACT_TASK.path}
+          exact={ROUTER.CREACT_TASK.exact}
+          component={CreactTask}
+        />
       </Switch>
     </div>
   );
