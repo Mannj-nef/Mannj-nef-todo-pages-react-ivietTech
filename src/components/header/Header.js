@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ROUTER } from "../../routers/constanRouters";
+import { useHistory } from "react-router-dom";
 import Search from "../search/Search";
 import "./style.scss";
 
 const Header = () => {
+  const history = useHistory();
+  const toCreacTask = () => {
+    history.push(ROUTER.CREACT_TASK.path);
+  };
+
   return (
     <div className="header">
-      <Link to="/creact-task" className="btn ">
+      <button className="btn" onClick={toCreacTask}>
         Create New Task
-      </Link>
+      </button>
       <Search></Search>
     </div>
   );
