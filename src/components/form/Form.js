@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -27,37 +27,45 @@ const schema = Yup.object({
 });
 
 const Form = ({ formUpdate }) => {
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState, control, setFocus } = useForm({
     resolver: yupResolver(schema),
   });
   const { errors } = formState;
   const onSubmit = (values) => {
     console.log(values);
   };
+
+  useEffect(() => {
+    setFocus("title");
+  }, [setFocus]);
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form" autoComplete="off">
       <InputWrapper
         label="Title"
         placeholder="Place holder"
-        register={{ ...register("title") }}
+        name="title"
+        control={control}
         err={errors.title}
       ></InputWrapper>
       <InputWrapper
         label="Creator"
         placeholder="Name of Creator"
-        register={{ ...register("creator") }}
+        name="creator"
+        control={control}
         err={errors.creator}
       ></InputWrapper>
       <InputWrapper
         label="Created at"
         placeholder="08-02-2021 07:45:20"
-        register={{ ...register("time") }}
+        name="time"
+        control={control}
         err={errors.time}
       ></InputWrapper>
       <InputWrapper
         label="Description"
         placeholder="Description Details"
-        register={{ ...register("desc") }}
+        name="desc"
+        control={control}
         err={errors.desc}
       ></InputWrapper>
 
