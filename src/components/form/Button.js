@@ -1,9 +1,9 @@
 import React from "react";
 
-const Button = ({ title, ...props }) => {
+const Button = ({ title, isSubmit, ...props }) => {
   return (
     <button className="btn" {...props}>
-      {title}
+      {isSubmit ? <div className="btn-loading animate-spin"></div> : title}
     </button>
   );
 };

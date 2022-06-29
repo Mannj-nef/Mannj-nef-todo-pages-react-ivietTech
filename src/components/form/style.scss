@@ -20,12 +20,8 @@
             border-radius: 8px;
             border: 1px solid var(--blue-color);
         }
-        .err-message {
-            margin-top: 10px;
-            margin-bottom: -10px;
-            color: var(--err-color);
-        }
     }
+
     .action-wrapp {
         .radio-wrapp {
             margin-top: 40px;
@@ -63,11 +59,26 @@
             justify-content: center;
         }
     }
+    .err-message {
+        margin-top: 10px;
+        margin-bottom: -10px;
+        color: var(--err-color);
+    }
     .btn {
         margin-top: 60px !important;
         padding: 12px 20px;
+        min-width: 100px;
         border-radius: 8px;
         color: var(--while-color);
         background-color: var(--blue-color);
+        &-loading {
+            --size: 20px;
+            width: var(--size);
+            height: var(--size);
+            margin: auto;
+            border: 2px solid var(--while-color);
+            border-radius: 100rem;
+            border-top: 2px solid transparent;
+        }
     }
 }

@@ -1,0 +1,7 @@
+const TYPE = {
+  CREATE_NEW_TASK: "CREATE_NEW_TASK",
+  UPDATE_TASK: "UPDATE_TASK",
+  DELETE_TASK: "DELETE_TASK",
+};
+
+export default TYPE;

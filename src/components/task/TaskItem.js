@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import "./style.scss";
 
@@ -34,4 +34,4 @@ const TaskItem = ({ id, title, author, status, desc }) => {
   );
 };
 
-export default TaskItem;
+export default memo(TaskItem);

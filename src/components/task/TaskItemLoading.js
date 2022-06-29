@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import LoadingSkeleton from "../../skeleton/LoadingSkeleton";
 import "./style.scss";
 
@@ -25,4 +25,4 @@ const TaskItemLoading = () => {
   );
 };
 
-export default TaskItemLoading;
+export default memo(TaskItemLoading);

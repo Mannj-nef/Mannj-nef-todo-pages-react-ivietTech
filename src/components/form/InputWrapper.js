@@ -1,33 +1,25 @@
 import React from "react";
-import { Controller } from "react-hook-form";
+import { useController } from "react-hook-form";
 
 const InputWrapper = ({ label, control, ...props }) => {
+  const { field } = useController({
+    name: props.name,
+    control,
+    defaultValue: "",
+  });
+
   return (
-    <Controller
-      name={props.name}
-      control={control}
-      defaultValue=""
-      render={({ filed }) => {
-        return (
-          <div className="input-wrapp">
-            <label htmlFor={label} className="title">
-              {label}
-            </label>
-            <p className="flex-1">
-              <input
-                type="text"
-                className={`input-control`}
-                {...props}
-                {...filed}
-              />
-              {props.err?.message && (
-                <p className="err-message">{props.err?.message}</p>
-              )}
-            </p>
-          </div>
-        );
-      }}
-    />
+    <div className="input-wrapp">
+      <label htmlFor={label} className="title">
+        {label}
+      </label>
+      <p className="flex-1">
+        <input type="text" className={`input-control`} {...props} {...field} />
+        {props.err?.message && (
+          <span className="err-message">{props.err?.message}</span>
+        )}
+      </p>
+    </div>
   );
 };
 
