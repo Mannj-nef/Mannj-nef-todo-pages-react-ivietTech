@@ -1,13 +1,22 @@
 import React, { memo } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { generatePath, useHistory } from "react-router-dom";
+import { ROUTER } from "../../routers/constanRouters";
 import "./style.scss";
 
-const TaskItem = ({ id, title, author, status, desc }) => {
-  const { url } = useRouteMatch();
+const TaskItem = ({ taskItem }) => {
+  const history = useHistory();
+
+  const handleRedirectToEdit = (id) => {
+    history.push(
+      generatePath(ROUTER.EDIT_TASK.path, {
+        id: id,
+      })
+    );
+  };
 
   const handleCheckStatus = () => {
     let statusClass;
-    switch (status) {
+    switch (taskItem.status) {
       case "Done":
         statusClass = "done";
         break;
@@ -23,14 +32,18 @@ const TaskItem = ({ id, title, author, status, desc }) => {
     return statusClass;
   };
   return (
-    <Link to={`${url}/update/${id}`} className="task-item p-5">
-      <h3 className="title">Title: Task {title}</h3>
-      <p className="cteator">Creator: {author}</p>
-      <p className={handleCheckStatus()}>Status: {status}</p>
+    <div
+      className="task-item p-5 cursor-pointer"
+      onClick={() => handleRedirectToEdit(taskItem.id)}
+    >
+      <h3 className="title">Title: {taskItem.title}</h3>
+      <p className="cteator">Creator: {taskItem.creator}</p>
+      <p className={handleCheckStatus()}>Status: {taskItem.status}</p>
       <p className="desc">
-        <span className="desc-main">Desscription:</span> <span>{desc}</span>
+        <span className="desc-main">Desscription:</span>{" "}
+        <span>{taskItem.desscription}</span>
       </p>
-    </Link>
+    </div>
   );
 };
 

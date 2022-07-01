@@ -5,7 +5,13 @@ import Button from "./Button";
 import InputWrapper from "./InputWrapper";
 import RadioInput from "./RadioInput";
 
-const Form = ({ formUpdate, formSubmit, useFormWidthHook }) => {
+const Form = ({
+  formUpdate = false,
+  useFormWidthHook,
+  formSubmit,
+  handleReset,
+  handleDelete,
+}) => {
   const { handleSubmit, formState, control } = useFormWidthHook;
   const { errors, isSubmitting } = formState;
 
@@ -42,10 +48,10 @@ const Form = ({ formUpdate, formSubmit, useFormWidthHook }) => {
       <InputWrapper
         label="Description"
         placeholder="Description Details"
-        name="desc"
+        name="desscription"
         id="desc"
         control={control}
-        err={errors.desc}
+        err={errors.desscription}
       ></InputWrapper>
 
       {!formUpdate ? (
@@ -80,9 +86,9 @@ const Form = ({ formUpdate, formSubmit, useFormWidthHook }) => {
             )}
           </div>
           <div className="btn-wrapp">
-            <Button title="Save"></Button>
-            <Button title="Reset"></Button>
-            <Button title="Delete"></Button>
+            <Button type="submit" title="Save"></Button>
+            <Button title="Reset" onClick={handleReset}></Button>
+            <Button title="Delete" onClick={handleDelete}></Button>
           </div>
         </div>
       )}

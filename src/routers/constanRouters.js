@@ -29,4 +29,9 @@ export const ROUTER = {
     exact: true,
     name: "Creact task",
   },
+  EDIT_TASK: {
+    path: "/edit-task/:id",
+    exact: true,
+    name: "Edit task",
+  },
 };

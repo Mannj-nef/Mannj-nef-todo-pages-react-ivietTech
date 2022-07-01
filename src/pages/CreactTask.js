@@ -1,15 +1,17 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import Form from "../components/form/Form";
 import schema from "../components/form/schemaValidate";
 import { action } from "../redux/actions";
+import { ROUTER } from "../routers/constanRouters";
 
 const CreactTask = () => {
-  const selector = useSelector((state) => state.taskReducer.listTask);
+  const history = useHistory();
   const dispatch = useDispatch();
-  console.log(selector);
 
   const useFormWidthHook = useForm({
     resolver: yupResolver(schema),
@@ -21,12 +23,18 @@ const CreactTask = () => {
     setFocus("title");
   }, [setFocus]);
 
+  const handleBackToNewTask = () => {
+    console.log(0);
+    history.push(ROUTER.NEW_TASK.path);
+  };
+
   const onSubmit = (values) => {
     return new Promise((resolver) => {
       setTimeout(() => {
         resolver();
-        dispatch(action.creactNewTask("quanDev"));
-        console.log(values);
+
+        dispatch(action.creactNewTask(values));
+        handleBackToNewTask();
         reset();
       }, 2000);
     });

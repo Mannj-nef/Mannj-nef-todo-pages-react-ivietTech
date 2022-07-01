@@ -41,14 +41,7 @@ const Task = () => {
     <div className="grid grid-cols-4 gap-[15px]">
       {!isLoading && tasks.length > 0
         ? tasks.map((taskItem) => (
-            <TaskItem
-              key={taskItem.id}
-              id={taskItem.id}
-              title={taskItem.title}
-              author={taskItem.author}
-              status={taskItem.status}
-              desc={taskItem.desscription}
-            ></TaskItem>
+            <TaskItem key={taskItem.id} taskItem={taskItem}></TaskItem>
           ))
         : Array(8)
             .fill(null)

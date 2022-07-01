@@ -4,7 +4,7 @@ import "./style.scss";
 
 const TaskItemLoading = () => {
   return (
-    <div className="task-item px-[15px] py-3">
+    <div className="task-item px-[15px] py-3 cursor-default">
       <h3 className="title">
         Title: Task {<LoadingSkeleton width="150px" height="15px" />}
       </h3>

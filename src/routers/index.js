@@ -8,6 +8,7 @@ import NewTask from "../pages/NewTask";
 import DoingTask from "../pages/DoingTask";
 import AllTask from "../pages/AllTask";
 import CreactTask from "../pages/CreactTask";
+import UpdateTask from "../pages/UpdateTask";
 
 const index = () => {
   return (
@@ -42,6 +43,11 @@ const index = () => {
           path={ROUTER.CREACT_TASK.path}
           exact={ROUTER.CREACT_TASK.exact}
           component={CreactTask}
+        />
+        <Route
+          path={ROUTER.EDIT_TASK.path}
+          exact={ROUTER.EDIT_TASK.exact}
+          component={UpdateTask}
         />
       </Switch>
     </div>
